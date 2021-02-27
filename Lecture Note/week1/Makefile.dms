@@ -1,0 +1,8 @@
+stack: push.o pop.o main.o
+	gcc -o stack push.o pop.o main.o
+main.o: main.c push.c pop.c stack.h
+	gcc -Wall -Werror -c main.c push.c pop.c
+pop.o: pop.c stack.h
+	gcc -Wall -Werror -c pop.c
+push.o: push.c stack.h
+	gcc -Wall -Werror -c push.c
